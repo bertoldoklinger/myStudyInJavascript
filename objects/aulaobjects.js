@@ -55,4 +55,21 @@ let dogA = dog.create("deuce", "pinscher", 3);
 
 dog.create("tiago", "husky", 1);
 
-
+//Object Representation
+const animal = {
+  id: 42,
+  name: "rawr",
+  type: "dog",
+  "num legs": 4,
+  numLegs: 4,
+};
+//Access a property
+console.log(animal.id)
+//Change a property
+animal.numLegs = 0;
+//Remove a property
+delete 'num legs' in animal;
+// Object Methods
+console.log(Object.keys(animal));
+console.log(Object.values(animal));
+console.log(Object.entries(animal));
