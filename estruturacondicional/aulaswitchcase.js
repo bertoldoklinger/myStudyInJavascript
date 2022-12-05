@@ -52,4 +52,5 @@ switch (carro) {
   default:
     alert("Não trabalhamos com este tipo de automóvel aqui!");
 }
+
  
