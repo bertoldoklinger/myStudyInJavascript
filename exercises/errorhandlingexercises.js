@@ -88,4 +88,4 @@ try {
   console.error(error);
   console.error(`We lost with the number: ${number}`);
   console.log(number);
-}
+} }
