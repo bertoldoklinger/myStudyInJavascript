@@ -43,7 +43,7 @@ console.log("Tudo pronto!");
 
 //======================================================
 
-const makeTimeout = (ms) => {
+const makeATimeout = (ms) => {
   const timeout = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("All done!");
@@ -55,15 +55,15 @@ const makeTimeout = (ms) => {
 
 console.log("Program starting..."); // 1
 
-const fetchData = async () => {
+const fetchThisData = async () => {
   console.log("Buscando primeiro conjunto de dados..."); // 2
-  const result1 = await makeTimeout(2000); // vao rodar no mesmo tempo
+  const result1 = await makeATimeout(2000); // vao rodar no mesmo tempo
   console.log("Buscando segundo conjunto de dados...", result1); // 4
-  const result2 = await maketimeout(2000); // vao rodar no mesmo tempo
+  const result2 = await makeATimeout(2000); // vao rodar no mesmo tempo
   console.log("Terminei de buscar os dados!", result2); //5
 };
 
-fetchData();
+fetchThisData();
 
 console.log("Program done!"); // 3
 
@@ -95,7 +95,7 @@ useHello();
 
 // ======================= Error handling on async / await function
 
-const makeTimeout = (ms) => {
+const makeThisTimeout = (ms) => {
   const timeout = new Promise((resolve, reject) => {
     setTimeout(() => {
       //resolve("All done!");
@@ -108,7 +108,7 @@ const makeTimeout = (ms) => {
 
 const causeError = async () => {
   try {
-    const result = await makeTimeout(2000);
+    const result = await makeThisTimeout(2000);
     console.log(result);
   } catch (error) {
     console.log(error);
