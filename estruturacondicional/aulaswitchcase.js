@@ -53,4 +53,17 @@ switch (carro) {
     alert("Não trabalhamos com este tipo de automóvel aqui!");
 }
 
- 
+//=============================
+
+const animal = 'Monkey'
+
+switch(animal) {
+  case "Tiger": {
+    console.log('You are a tiger')
+    break;
+  }
+  case 'Monkey': {
+    console.log('The best animal')
+    break;
+  }
+}
