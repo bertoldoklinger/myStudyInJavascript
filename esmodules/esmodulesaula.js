@@ -1,18 +1,17 @@
 const person = {
-  name: 'Bertoldo',
+  name: "Bertoldo",
   age: 23,
-  hobbies : ['nba2k', 'fifa23', 'csgo']
+  hobbies: ["nba2k", "fifa23", "csgo"],
 };
 
 const printHobbies = () => {
-  console.log(person.hobbies)
-}
+  console.log(person.hobbies);
+};
 
 const car = {
-  model: 'Chevrolet',
+  model: "Chevrolet",
   year: 2009,
-}
-
+};
 
 export { person, car };
-export default printHobbies
+export default printHobbies;

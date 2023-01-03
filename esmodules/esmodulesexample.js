@@ -1,10 +1,9 @@
 import { person } from "./esmodulesaula.js";
-import showHobby from "./esmodulesaula.js"
-import * as Everything from "./esmodulesaula.js"
+import showHobby from "./esmodulesaula.js";
+import * as Everything from "./esmodulesaula.js";
 
-console.log(Everything.car)
+console.log(Everything.car);
 
-showHobby()
+showHobby();
 
-console.log(person)
-
+console.log(person);

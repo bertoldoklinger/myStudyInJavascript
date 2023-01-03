@@ -2,10 +2,7 @@
 (5) Use ES2015 method to see if array contains the value.
     Eliminate more cruft.
 */
-const check = (a,x)=>a.includes(x)
-
-
-
+const check = (a, x) => a.includes(x);
 
 /*
   (4) Eliminate all the overhead setup.
@@ -39,7 +36,6 @@ const check = (a,x)=>a.includes(x)
     return foundTarget
   }
 */
-
 
 /*
   (1) Manually Walk the array, 
