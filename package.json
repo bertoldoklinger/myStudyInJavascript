@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "prettier-airbnb-config": "^1.0.0"
+  }
+}
