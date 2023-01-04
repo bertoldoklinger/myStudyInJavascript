@@ -2,5 +2,23 @@
   "devDependencies": {
     "prettier": "^1.19.1",
     "prettier-airbnb-config": "^1.0.0"
-  }
+  },
+  "name": "mystudyonjavascript",
+  "description": "Nele estão meus estudos sobre assuntos em Javascript dividos em pastas e exercicios!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertoldoklinger/myStudyOnJavascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bertoldoklinger/myStudyOnJavascript/issues"
+  },
+  "homepage": "https://github.com/bertoldoklinger/myStudyOnJavascript#readme"
 }
