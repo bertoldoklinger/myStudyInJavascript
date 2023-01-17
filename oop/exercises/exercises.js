@@ -134,11 +134,12 @@ class ExtendedClock extends Clock {
 const textArea = document.querySelector('[data-js="textarea"]');
 const counterParagraph = document.querySelector('[data-js="paragraph"]');
 
-textArea.addEventListener("input", (e) => {
+const showCounterParagraph = (e) => {
   const currentLength = e.target.value.length;
   const maxLength = e.target.getAttribute("maxlength");
   counterParagraph.textContent = `${currentLength}/${maxLength}`;
-});
+};
+textArea.addEventListener("input", showCounterParagraph);
 /*
   06
   - Já implementamos os métodos forEach, some, map e filter, do zero;
