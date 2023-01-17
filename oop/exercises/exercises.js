@@ -26,25 +26,22 @@ let rabbit = new Rabbit("White Rabbit");
     funcione.
 */
 class Counter {
-  constructor() {
-    this.count = 0;
-  }
+  #count = 0;
+
   get value() {
-    return this.count;
+    return this.#count;
   }
 
   increment() {
-    return this.count++;
+    return this.#count++;
+  }
+
+  set newValue(aNumber) {
+    this.#count = aNumber;
   }
 }
 
 const counter = new Counter();
-
-console.log(counter.value);
-counter.increment();
-console.log(counter.value);
-counter.increment();
-console.log(counter.value);
 
 /*
 
@@ -56,11 +53,9 @@ console.log(counter.value);
 
 const values = [0, {}, "", [], NaN, () => {}];
 
-class ArrayFilter {
-  constructor(values) {
-    this.values = values;
-  }
-}
+const truthyValue = values.filter(Boolean);
+
+// console.log(truthyValue);
 
 /*
   04
@@ -71,64 +66,64 @@ class ArrayFilter {
     funcione.
 */
 
-// class Clock {
-//   constructor ({ template }) {
-//     this.template = template
-//   }
+const formatTimeUnits = (units) =>
+  units.map((unit) => (unit < 10 ? (unit = `0${unit}`) : unit));
 
-//   render () {
-//     const date = new Date()
-//     let hours = date.getHours()
-//     let minutes = date.getMonth()
-//     let seconds = date.getSeconds()
+const getTime = () => {
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
 
-//     if (hours < 10) {
-//       hours = `0${hours}`
-//     }
+  return [hours, minutes, seconds];
+};
+const getFormattedTime = (template) => {
+  const [hours, minutes, seconds] = getTime();
+  const formattedTime = formatTimeUnits([hours, minutes, seconds]);
 
-//     if (minutes < 10) {
-//       minutes = `0${minutes}`
-//     }
+  return template
+    .split(":")
+    .map((_, index) => formattedTime[index])
+    .join(":");
+};
 
-//     if (seconds < 10) {
-//       seconds = `0${seconds}`
-//     }
+class Clock {
+  constructor({ template }) {
+    this.template = template;
+  }
 
-//     const formattedTime = this.template
-//       .replace('h', hours)
-//       .replace('m', minutes)
-//       .replace('s', seconds)
+  render() {
+    const formattedTime = getFormattedTime(this.template);
+    console.log(formattedTime);
+  }
 
-//     console.log(formattedTime)
-//   }
+  start() {
+    const oneSecond = 1000;
+    this.render();
+    this.timer = setInterval(() => this.render(), oneSecond);
+  }
 
-//   start () {
-//     this.render()
-//     this.timer = setInterval(() => this.render(), 1000)
-//   }
+  stop() {
+    clearInterval(this.timer);
+  }
+}
 
-//   stop () {
-//     clearInterval(this.timer)
-//   }
-// }
+class ExtendedClock extends Clock {
+  constructor(options) {
+    super(options);
 
-// class ExtendedClock extends Clock {
-//   constructor ({ options }) {
-//     super(options)
+    const { precision = 1000 } = options;
+    this.precision = precision;
+  }
 
-//     let { precision = 1000 } = options
-//     this.precision = precision
-//   }
+  start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), this.precision);
+  }
+}
 
-//   start () {
-//     this.render()
-//     this.timer = setInterval(() => this.render(), this.precision)
-//   }
-// }
-
-// const clock = ExtendedClock({ template: 'h:m:s', precision: 1000 })
-
-// clock.start()
+const clock = new ExtendedClock({ template: "h:m:s", precision: 1000 });
+clock.start();
 
 /*
   05
