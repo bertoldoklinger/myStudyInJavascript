@@ -122,8 +122,8 @@ class ExtendedClock extends Clock {
   }
 }
 
-const clock = new ExtendedClock({ template: "h:m:s", precision: 1000 });
-clock.start();
+// const clock = new ExtendedClock({ template: "h:m:s", precision: 1000 });
+// clock.start();
 
 /*
   05
@@ -131,7 +131,14 @@ clock.start();
     caractere for inserido no textarea, exiba no parágrafo a quantidade de 
     caracteres que o textarea contém.
 */
+const textArea = document.querySelector('[data-js="textarea"]');
+const counterParagraph = document.querySelector('[data-js="paragraph"]');
 
+textArea.addEventListener("input", (e) => {
+  const currentLength = e.target.value.length;
+  const maxLength = e.target.getAttribute("maxlength");
+  counterParagraph.textContent = `${currentLength}/${maxLength}`;
+});
 /*
   06
   - Já implementamos os métodos forEach, some, map e filter, do zero;
