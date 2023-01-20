@@ -90,4 +90,4 @@ body.classList.remove("body-background");
   - Não utilize o método remove() para fazer isso.
 */
 
-link.toggle("class");
+link.classList.toggle("link");
