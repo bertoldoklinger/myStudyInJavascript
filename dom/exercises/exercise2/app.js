@@ -50,8 +50,9 @@ lis.forEach(changeColorLi);
   - Adicione a classe "body-background" no corpo do index.html;
   P.s: a classe "body-background" já está declarada no style.css.
 */
-const wrapperDiv = document.querySelector("body");
-wrapperDiv.classList.add("body-background");
+const body = document.body;
+
+body.classList.add("body-background");
 
 /*
   05
@@ -69,24 +70,24 @@ link.setAttribute(
   06
   - Exiba o novo valor do atributo href do link no console.
 */
+console.log(link.getAttribute("href"));
 
-// console.log(link.getAttribute("href"));
 /*
   07
   - Exiba, no console, um objeto com todas as propriedades CSS que podem ser  
     manipuladas via JS no h1.
 */
 
-// console.log(title.style);
+console.log(title.style);
 /*
   08
   - Remova a classe "body-background", do elemento body.
 */
-wrapperDiv.classList.remove("body-background");
+body.classList.remove("body-background");
 /*
   09
   - Se o link da página possuir uma classe "link", remova-a;
   - Não utilize o método remove() para fazer isso.
 */
 
-link.setAttribute("class", "");
+link.toggle("class");
