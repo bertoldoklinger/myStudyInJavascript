@@ -19,3 +19,13 @@ button {
   margin: 10px auto;
   padding: 4px;
 }
+
+.success {
+  border: 2px solid green;
+  background-color: lightgreen;
+}
+
+.error {
+  border: 2px solid crimson;
+  background-color: pink;
+}
