@@ -19,6 +19,18 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
   */
+
+/*
+  02
+  - Valide o envio do form;
+  - Se o username inserido no input é válido, no envio do form, exiba um  
+    parágrafo verde abaixo do botão com a mensagem "Dados enviados =)";
+  - Se no momento do envio, o valor do input é inválido, o parágrafo deve ser  
+    vermelho e exibir "Por favor, insira um username válido".
+  - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
+  - Não insira o parágrafo manualmente no index.html.
+*/
+
 const form = document.querySelector("form");
 const button = document.querySelector("button");
 const inputUsername = document.querySelector("#username");
@@ -103,16 +115,6 @@ const showSubmitInfo = (event) => {
 
 inputUsername.addEventListener("input", showUsernameInfo);
 form.addEventListener("submit", showSubmitInfo);
-/*
-  02
-  - Valide o envio do form;
-  - Se o username inserido no input é válido, no envio do form, exiba um  
-    parágrafo verde abaixo do botão com a mensagem "Dados enviados =)";
-  - Se no momento do envio, o valor do input é inválido, o parágrafo deve ser  
-    vermelho e exibir "Por favor, insira um username válido".
-  - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
-  - Não insira o parágrafo manualmente no index.html.
-*/
 
 /*
   03
