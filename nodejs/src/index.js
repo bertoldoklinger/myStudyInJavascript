@@ -21,13 +21,6 @@ function verifyIfExistssAccountCpf(req, res, next) {
   return next();
 }
 
-/**
- * CPF - STRING
- * NAME - STRING
- * ID - UUID(IDENTIFICADOR ÚNICO UNIVERSAL)
- * STATEMENT(EXTRATO/LANÇAMENTOS) - []
- */
-
 app.post("/account", (req, res) => {
   const { cpf, name } = req.body;
 
@@ -51,9 +44,26 @@ app.post("/account", (req, res) => {
 
 // app.use(verifyIfExistssAccountCpf)
 
-app.get("/statement/", verifyIfExistssAccountCpf, (req, res) => {
+app.get("/statement", verifyIfExistssAccountCpf, (req, res) => {
   const { customer } = req;
   return res.json(customer.statement);
+});
+
+app.post("/deposit", verifyIfExistssAccountCpf, (req, res) => {
+  const { description, amount } = req.body;
+
+  const { customer } = req;
+
+  const statementOperation = {
+    description,
+    amount,
+    created_at: new Date(),
+    type: "credit",
+  };
+
+  customer.statement.push(statementOperation);
+
+  return res.status(201).send();
 });
 
 app.listen(3333);
