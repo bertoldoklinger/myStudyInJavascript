@@ -1,6 +1,40 @@
 ## FinApi - Financeira
 
-~~
+---
+
+## Instalação, Dependências e Executando o Projeto
+
+**1.** Clone este repositório
+
+```
+git clone git@github.com:Ygohr/fin-api-ignite-nodejs.git
+```
+
+**2.** Vá até o diretório raiz do projeto
+
+```
+cd fin-api-node-js
+```
+
+**3.** Instale as dependências necessárias
+
+```
+yarn
+ou
+npm install
+```
+
+**4.** Execute a aplicação
+
+```
+yarn dev
+ou
+npm run dev
+```
+
+## Usando a Aplicação
+
+Para realização de **requisições** na aplicação, deve ser utilizado o **Insomnia** ou **Postman**
 
 ### Requisitos
 
@@ -26,3 +60,5 @@
 - [x] Não deve ser possível fazer saque quando o saldo for insuficiente
 - [x] Não deve ser possível excluir uma conta não exístente
 - [x] Não deve ser possível retornar o balanço de uma conta não exístente
+
+- **Desenvolvido** **por** [**Bertoldo Klinger**](https://www.linkedin.com/in/bertoldoklinger/)
