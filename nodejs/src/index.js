@@ -124,4 +124,12 @@ app.put("/account", verifyIfExistssAccountCpf, (req, res) => {
   return res.status(201).send();
 });
 
+app.delete("/account", verifyIfExistssAccountCpf, (req, res) => {
+  const { customer } = req;
+
+  customers.splice(customer, 1);
+
+  return res.status(200).json(customers);
+});
+
 app.listen(3333);
