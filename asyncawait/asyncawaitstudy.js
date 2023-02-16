@@ -24,7 +24,6 @@ fetchStuff();
 
 console.log("Program complete...");
 
-
 //=================================================
 
 // Whats the order ??
@@ -89,7 +88,6 @@ result
 
 const useHello = async () => {
   const result = await fetchData();
-  console.log(result);
 };
 useHello();
 
@@ -114,6 +112,4 @@ const causeError = async () => {
     console.log(error);
   }
 };
-console.log("Program starting...");
 causeError();
-console.log("Program done!");
